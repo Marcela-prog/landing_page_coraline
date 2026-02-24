@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0b475b;
+  font-family: poppins, sans-serif;
+}
+
+.intro {
+  flex: 1;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s ease;
+}
+
+h1 {
+  font-family: "Creepster", cursive;
+  background: linear-gradient(90deg, #a0e0ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 50, 0.5);
+}
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(143, 211, 244, 0.6), 0 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+
+.coraline-logo {
+  font-family: "Creepster", cursive;
+  font-size: 8vw;
+  background: linear-gradient(90deg, #8fd3f4, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 50, 0.5);
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.coraline-logo:hover {
+  transform: translateY(-10px) rotate(-2deg);
+  text-shadow: 4px 4px 12px rgba(0, 0, 50, 0.7);
+}
+
+.porta {
+  width: 160px;
+  display: block;
+  margin: 0 auto -20px;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.porta:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 30px rgba(160, 224, 255, 0.9));
+}
+
+.entrar-texto {
+  text-align: center;
+  color: #dc7171;
+  font-family: "Creepster", cursive;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+.link-porta {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#landing {
+  flex: 1;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: radial-gradient(circle at center, #0b1f2a 0%, #000000 100%);
+  min-height: 100dvh;
+  text-align: center;
+  padding: 80px 20px 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#landing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05), transparent 60%), radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.04), transparent 60%);
+  animation: nevoa 12s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes nevoa {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+.titulo-landing {
+  font-family: "Creepster", cursive;
+  font-size: 4rem;
+  color: #8fd3f4;
+  margin-bottom: 60px;
+  text-shadow: 0 0 20px rgba(143, 211, 244, 0.5);
+  opacity: 0;
+  animation: aparecerTitulo 1.5s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.titulo-landing:hover {
+  transform: scale(1.08);
+}
+
+@keyframes aparecerTitulo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 50px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.personagem {
+  text-align: center;
+  max-width: 200px;
+}
+
+.card-imagem {
+  position: relative;
+  width: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease;
+}
+
+.card-imagem img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.6);
+}
+
+.card-imagem:hover img {
+  transform: scale(1.2);
+  filter: brightness(1);
+}
+
+.card-imagem:hover {
+  box-shadow: 0 0 35px rgba(143, 211, 244, 0.9);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.personagem.ativo .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.personagem h3 {
+  color: #ffffff;
+  margin: 15px 0 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.saiba-btn {
+  background: none;
+  border: 1px solid #8fd3f4;
+  color: #8fd3f4;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.saiba-btn:hover {
+  background: #8fd3f4;
+  color: black;
+}
+
+.btn-voltar {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 20px;
+  background-color: #8fd3f4;
+  border: none;
+  border-radius: 6px;
+  font-family: "Creepster", cursive;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-voltar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(143, 211, 244, 0.8);
+}
+
+@media (max-width: 1024px) {
+  .poster {
+    gap: 30px;
+  }
+  .card-imagem {
+    width: 160px;
+  }
+  .titulo-landing {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .link-porta {
+    margin-top: 40px;
+  }
+  .poster {
+    gap: 20px;
+  }
+  .card-imagem {
+    width: 140px;
+  }
+  .titulo-landing {
+    font-size: 2.2rem;
+  }
+}
