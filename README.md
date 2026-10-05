@@ -140,4 +140,4 @@ As imagens, personagens e elementos visuais relacionados à obra pertencem aos s
 Desenvolvido por **Marcela Nogueira**.
 
 - GitHub: [Marcela-prog](https://github.com/Marcela-prog)
-- LinkedIn: [Marcela Nogueira](https://www.linkedin.com/in/marcela-nogueira-85527191/)
+- LinkedIn: [Marcela Nogueira](https://www.linkedin.com/in/marcela-nogueira-855272191 )
